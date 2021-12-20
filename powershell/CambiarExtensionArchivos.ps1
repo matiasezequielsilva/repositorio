@@ -1,0 +1,1 @@
+get-childitem -recurse -filter "*.txt" | rename-item -NewName {$_.Name -replace ".txt",".ps1"} -WhatIf
