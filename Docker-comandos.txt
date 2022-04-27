@@ -1,0 +1,83 @@
+**********************************
+          Ejecutando php
+**********************************
+docker run -it -p 8080:80 php:7.2-apache
+
+**********************************
+    Ejecutando Jboss/Wildfly
+**********************************
+docker run -p 8080:8080 -it jboss/wildfly
+
+
+**********************************
+       Comandos Docker
+**********************************
+1. Buscar imagen
+  -> docker search <imagen>
+
+2. Descargar imagen al repositorio local
+  -> docker pull <imagen>
+
+3. Ver imagenes en el repositorio local
+  -> docker images (tambien se puede usar docker image ls)
+
+4. Ver contenedores
+  -> docker ps (Muestra solo los activos)
+  -> docker ps -a (Muestra activos e inactivos)
+
+5. Iniciar una imagen para crear contenedor en modo interactivo y asignacion de puerto
+  -> docker run -it -p <puerto_asignado> <nombre_image>
+     docker run -it -p 8080:80 php:7.2-apache donde 8080 es el puerto de mi pc y 80 es el del docker
+
+6. Borrar contenedores docker
+  -> docker rm -f <container_id>
+     el container_id lo saco con docker ps -a
+
+7. Interactuar con contenedor
+  -> docker exec -it <container_id> [OPTIONS]
+  
+8. Borrar imagen
+  -> docker rmi -f <imagen_id>
+     el imagen_id lo saco con docker images
+
+9. Crear volumen compartido con el host
+  -> docker run -d -v <path_host>:<path_container> -p 8080:80  php:7.2-apache
+     docker run -d -v D:\Docker\my-vol2:/var/www/html/ -p 8080:80 php:7.2-apache
+
+10. Crear un volumen
+  -> docker volume <nombre_volume>
+  
+11. Mostrar lista de volumenes
+  -> docker volume ls
+  
+12. Eliminar un volume
+  -> docker volume rm <nombre_volume>
+     el nombre_volume lo saco con docker volume ls
+
+13. Inspeccionar un contenedor
+  -> docker container inspect <container_id>
+  
+14. Listar redes
+  -> docker network ls
+
+15. Crear una red 
+  -> docker network create <nombre_red>
+  
+16. Conectar un contenedor a una red
+  -> docker network connect <nombre_red> <container_id>
+  
+17. Desconectar un contenedor a una red
+  -> docker network disconnect <nombre_red> <container_id>
+  
+18. Eliminar redes no usadas
+  -> docker network prune
+  
+19. Eliminar una red
+  -> docker network rm <network_id>
+  
+20. Contruir imagen a partir del dockerfile
+  -> docker build .
+     Parado en la carpeta q tiene el Dockerfile
+  
+21. Construir imagen con un nuevo nombre a partir del dockerfile
+  -> docker build -t <nombre_imagen_personalizado> .
