@@ -13,5 +13,6 @@ while pesos<=casa:
     pesos=pesos+alquiler
     meses=meses+1
 print("Se llegara al valor de la casa en:" , anos , " años y " , meses , " meses")
+#{:.0f} = Redondeo
 print ("con $" , "{:.0f}".format(pesos) , "pesos")
 print ("con un alquier de $" , "{:.0f}".format(alquiler) )
