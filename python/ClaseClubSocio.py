@@ -10,14 +10,14 @@ class Club:
     def responsabilidad(self):
         if self.Socio1.antiguedad > self.Socio2.antiguedad:
             if self.Socio1.antiguedad > self.Socio3.antiguedad:
-                print("El socio con mayor antiguedad es: ",self.Socio1.nombre)
+                print(f"El socio con mayor antiguedad es: {self.Socio1.nombre}")
             else:
-                print("El socio con mayor antiguedad es: ",self.Socio3.nombre)
+                print(f"El socio con mayor antiguedad es: {self.Socio3.nombre}")
         else:
             if self.Socio2.antiguedad > self.Socio3.antiguedad:
-                print("El socio con mayor antiguedad es: ", self.Socio2.nombre)
+                print(f"El socio con mayor antiguedad es: {self.Socio2.nombre}")
             else:
-                print("El socio con mayor antiguedad es: ",self.Socio3.nombre)
+                print(f"El socio con mayor antiguedad es: {self.Socio3.nombre}")
 
 Club1=Club()
 Club1.responsabilidad()
