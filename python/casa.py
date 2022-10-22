@@ -1,5 +1,5 @@
 pesos=0
-meses=0
+meses=1
 anos=0
 casa=int(input("Ingrese el valor de la casa:"))
 casa=int(casa)
@@ -8,6 +8,7 @@ alquiler=float(alquiler)
 while pesos<=casa:
     if meses>=12:
         anos=anos+1
+        print (meses)
         meses=0
         alquiler=alquiler*1.3
     pesos=pesos+alquiler
