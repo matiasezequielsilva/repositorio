@@ -1,1 +1,11 @@
 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
+
+PARA QUE NO TE LO PIDA SIEMPRE QUE ENTRAS
+
+Run nano ~/.git-credentials. Remove the GitHub line and save it.
+
+git config --global credential.helper store
+
+Risky as physically the token is saved in file ~/.git-credentials
+
+Run git pull and provide the username and password only once
