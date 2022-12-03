@@ -1,0 +1,23 @@
+terraform init
+terraform plan
+--------------------------------------------------------------------------------------------------------------------
+PARA EMPAREJAR EL TERRAFORM STATE LOCAL Y EL CLOUD (no es requerido)
+terraform refresh
+---------------------------------------------------------------------------------------------------------------------
+terraform apply
+terraform destroy
+PARA USAR UNA VARIABLE DE ENTORNO COMO UNA VARIABLE EN TERRAFORM USAMOS EN LA TERMINAL: (leer README cloud academy)
+TF_VAR_<variable>
+  - **Linux**: `export TF_VAR_workstation_ip=202.10.23.16/32`
+
+  - **Windows**: `set TF_VAR_workstation_ip=202.10.23.16/32`
+----------------------------------------------------------------------------------------------------------------------
+terraform workspace -list
+terraform workspace new test
+terraform workspace show
+terraform apply -auto-approve
+terraform destroy -auto-approve
+terraform workspace select <workspaceName> ej default
+PARA ABRIR UNA TERMINAL Y EJECUTAR UNA FUNCION PARA VER SU RESULTADO
+terraform console 
+ESCRIBO FUNCION EJ cidrsubnet(var.cidr_block, 8, 2)

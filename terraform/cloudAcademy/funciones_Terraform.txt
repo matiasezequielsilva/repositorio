@@ -1,0 +1,18 @@
+34.212.163.248
+ output "ips" {
+>   # join all the instance private IPs with commas separating them
+>   value = "${join(", ", aws_instance.web.*.private_ip)}"
+> }
+
+ resource "aws_instance" "web" {
+>   count         = "${var.instance_count}"
+>   # lookup returns a map value for a given key
+>   ami           = "${lookup(var.ami_ids, "us-west-2")}"
+>   instance_type = "t2.micro"
+>   # Use the subnet ids as an array and evenly distribute instances
+>   subnet_id     = "${element(aws_subnet.web_subnet.*.id, count.index % length(                                                                                                                                                             aws_subnet.web_subnet.*.id))}"
+>
+>   tags {
+>     Name = "Web Server ${count.index + 1}"
+>   }
+> }
