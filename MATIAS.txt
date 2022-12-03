@@ -1,5 +1,7 @@
-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
+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
 
 PARA QUE NO TE LO PIDA SIEMPRE QUE ENTRAS
+
+git config --global credential.helper store
 
 git config --global credential.helper cache
