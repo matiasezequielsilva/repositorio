@@ -1,2 +1,2 @@
-for f in range(5,51,5):
-    print(f)
+for i in range(5,100,5):
+    print(f"juancarlos{i}@estudiante.com")
