@@ -19,3 +19,5 @@ def imprimir_suma(lista):
     for elemento in lista:
         suma=suma+elemento
     print("Suma de todos sus elementos",suma)
+#recordar usar if __name__ == "__main__": antes de empezar el codigo para importar
+#solo las funciones y clases
