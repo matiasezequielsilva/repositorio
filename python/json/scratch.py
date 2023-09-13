@@ -1,7 +1,9 @@
 import json
 import requests
 import os
-print("Directorio actual:", os.getcwd())
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+os.chdir(script_dir)
 
 response = requests.get("https://jsonplaceholder.typicode.com/todos")
 todos = json.loads(response.text)
