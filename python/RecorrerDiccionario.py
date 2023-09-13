@@ -5,5 +5,6 @@ for name, number in fav_numbers.items():
 # todos los keys
 for name in fav_numbers.keys():
     print(name + ' loves a number')
+# todos los values
 for number in fav_numbers.values():
     print(str(number) + ' is a favorite number for someone')
